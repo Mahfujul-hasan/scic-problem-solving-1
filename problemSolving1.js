@@ -9,10 +9,10 @@ const stringReverser = (str) => {
 /*------------------------problem-2: Count vowels in a string-----------------------------*/ 
 const vowelCounter = (str) => {
     const vowels = ["a", "e", "i", "o", "u"];
-    const vowelFiltered = str.split("").filter(letter => vowels.includes(letter));
+    const vowelFiltered = str.toLowerCase().split("").filter(letter => vowels.includes(letter));
     return vowelFiltered.length;
 }
-// console.log(vowelCounter("happy  birthday"));
+// console.log(vowelCounter("happy  bIrthday"));
 
 
 
@@ -79,11 +79,14 @@ const firstLetterCapitalizer = (str) => {
 
 /*-------------------------problem-9: Find the factorial of a number----------------------*/ 
 const factorialFinder = (number) => {
+    if(number===0){
+        return 1
+    }
     const numberToArray = new Array(number).fill(0).map((_, i) => i + 1);
     const multiplication = numberToArray.reduce((acc, curr) => acc * curr, 1);
     return multiplication;
 }
-// console.log(factorialFinder(10));
+// console.log(factorialFinder(0));
 
 
 
